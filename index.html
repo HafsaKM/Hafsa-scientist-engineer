@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hafsa | AI & Immune Engineering</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f1f4f9;
+      --glass: rgba(255, 255, 255, 0.6);
+      --blur: blur(16px);
+      --text: #2c3e50;
+      --accent: #567ba0;
+      --header-bg: #ffffffcc;
+      --nav-bg: #e7edf3aa;
+      --border-color: #d0dae5;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: var(--header-bg);
+      backdrop-filter: var(--blur);
+      border-bottom: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+
+    h1 {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 2.5rem;
+      color: var(--accent);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--nav-bg);
+      backdrop-filter: var(--blur);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    nav a {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      background: #ffffffcc;
+      border: 1px solid var(--border-color);
+      color: var(--text);
+      transition: all 0.2s ease;
+    }
+
+    nav a.active, nav a:hover {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 2rem;
+      background: var(--glass);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      backdrop-filter: var(--blur);
+      border: 1px solid var(--border-color);
+    }
+
+    section {
+      display: none;
+    }
+
+    section.active#welcome {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    section.active:not(#welcome) {
+      display: block;
+      animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    #welcome img {
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      flex-shrink: 0;
+    }
+
+    #welcome .text {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    p, li, a {
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #666;
+      margin: 4rem auto 2rem;
+      padding: 2rem 1rem;
+      border-top: 1px solid #e1eaf0;
+    }
+
+    @media (max-width: 768px) {
+      section.active#welcome {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #welcome img {
+        max-width: 100%;
+        margin-top: 1rem;
+      }
+
+      #welcome .text {
+        min-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Hafsa</h1>
+    <p>PhD Researcher | Systems Immunology | Imperial College London</p>
+  </header>
+
+  <nav>
+    <a href="#welcome" class="active">Welcome</a>
+    <a href="#cv">CV</a>
+    <a href="#publications">Publications</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <main>
+    <section id="welcome" class="active">
+      <div class="text">
+        <h2>Welcome!</h2>
+        <p>
+          I’m a PhD student at Imperial College London working at the intersection
+          of deep learning and immunology. My research focuses on reconstructing
+          immune cell fate using single-cell transcriptomics, building predictive
+          models for gene perturbations, and developing computer vision tools to
+          quantify therapeutic responses in patient-derived 3D models (organoids
+          and spheroids).
+        </p>
+      </div>
+      <img src="./IMG_7418.jpg" alt="Illustration of Hafsa's research or a serene lab" />
+    </section>
+
+    <section id="cv">
+      <h2>Curriculum Vitae</h2>
+      <p><strong>PhD in Systems Immunology (2023–Present)</strong><br />
+        Imperial College London – EPSRC CDT Biodesign Engineering Studentship</p>
+      <ul>
+        <li>Developing AI-powered pipelines for immune cell fate mapping using scRNA-seq.</li>
+        <li>Discovered a novel transitional population using trajectory inference and RNA velocity.</li>
+        <li>Led a computer vision project for analysing therapy response in patient-derived cancer organoids and spheroids.</li>
+      </ul>
+      <p><strong>MRes in Systems & Synthetic Biology (2023–2024)</strong><br />
+        Imperial College London</p>
+      <ul>
+        <li>Awarded Outstanding Student Award for academic and research excellence.</li>
+      </ul>
+      <p><strong>BSc (Hons) Biochemistry (2019–2023)</strong><br />
+        King’s College London – First Class Honours</p>
+      <ul>
+        <li>Awarded the Layton Science Research Prize, recognized as the top student in the department.</li>
+      </ul>
+      <p><strong>Junior Computational Biologist</strong> (Aug 2022 – Jan 2024, Part-time)<br>
+        Faeth Therapeutics</p>
+        <ul>
+          <li>Integrated 1M-cell scRNA-seq framework spanning 40+ cancer subtypes and 24 normal tissues using deep learning-based dimensionality reduction.</li>
+          <li>Modelled tumour–immune interactions and identified metabolic phenotypes for synthetic lethality targeting using Scanpy, CellTypist, and InferCNV.</li>
+        </ul>
+        
+        <p><strong>Undergraduate Researcher</strong> (Jul 2021 – Jul 2022)<br>
+        Francis Crick Institute, Cancer Systems Biology Group</p>
+        <ul>
+          <li>Used spatial transcriptomics to study immune infiltration and pathway activation in colorectal cancer (CRC) subtypes.</li>
+          <li>Developed pipelines for variant calling, pathway mapping, and integrative genomic-transcriptomic analysis to explore Wnt disruptions in CRC.</li>
+          <li>Hands-on experience with laser capture microdissection, RNA extraction, H&E staining, and cell culture.</li>
+        </ul>
+    </section>
+
+    <section id="publications">
+      <h2>Publications & Posters</h2>
+      <ul>
+        <li>Co-author, 
+          <a href="https://www.cell.com/cancer-cell/fulltext/S1535-6108(24)00483-5" target="_blank">
+            A constitutive interferon-high immunophenotype defines response to immunotherapy in colorectal cancer
+          </a>, published in <em>Cancer Cell</em>.
+        </li>
+        <li>Presented findings on ILC3s and NK cell trajectories at the UK NK Meeting (2025) and Quantitative Immunology (2025)</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: hk1723@ic.ac.uk</p>
+      <p>GitHub: <a href="https://github.com/HafsaKM" target="_blank">github.com/HafsaKM</a></p>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 Hafsa. Made with elegant code ✨ on GitHub Pages.
+  </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const navLinks = document.querySelectorAll("nav a");
+      const sections = document.querySelectorAll("main section");
+
+      navLinks.forEach(link => {
+        link.addEventListener("click", e => {
+          e.preventDefault();
+          const targetId = link.getAttribute("href").substring(1);
+
+          navLinks.forEach(nav => nav.classList.remove("active"));
+          sections.forEach(section => section.classList.remove("active"));
+
+          link.classList.add("active");
+          const target = document.getElementById(targetId);
+          if (target) target.classList.add("active");
+        });
+      });
+    });
+  </script>
+</body>
+</html>
